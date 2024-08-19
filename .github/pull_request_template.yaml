@@ -1,0 +1,76 @@
+name: "Pull Request Template"
+description: "Standard PR template for RoboMaster open-source project"
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "描述"
+      description: "请简要描述所做的更改及其目的。请尽量明确每个更改的动机和背景。"
+    validations:
+      required: true
+
+  - type: input
+    id: related_issues
+    attributes:
+      label: "相关 Issue"
+      description: "请列出与此 PR 相关的 Issue 编号，例如：#123"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: change_type
+    attributes:
+      label: "变更类型"
+      description: "请勾选与此 PR 相关的变更类型："
+      options:
+        - label: "Bug 修复"
+          value: "bugfix"
+        - label: "新功能"
+          value: "feature"
+        - label: "文档更新"
+          value: "documentation"
+        - label: "代码格式化"
+          value: "code_formatting"
+        - label: "测试覆盖"
+          value: "test_coverage"
+        - label: "其他（请描述）"
+          value: "other"
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "解决方案"
+      description: "请简要描述此 PR 的实现细节和方案。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: testing
+    attributes:
+      label: "如何测试"
+      description: "请描述你已经测试过的场景和测试方法。如果添加了新功能，是否编写了新的测试用例？"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "注意事项"
+      description: "请描述在合并此 PR 时需要注意的事项，或在使用此更改时的已知问题。"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "检查清单"
+      description: "请确保以下内容已完成："
+      options:
+        - label: "代码已通过 lint 检查"
+          value: "lint_passed"
+        - label: "相关文档已更新"
+          value: "docs_updated"
+        - label: "相关测试已覆盖"
+          value: "tests_covered"
+        - label: "本 PR 解决了所提及的 Issue（如果适用）"
+          value: "issue_resolved"
